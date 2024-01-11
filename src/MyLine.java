@@ -25,11 +25,11 @@ public class MyLine {
         return slope;
     }
 
-    public double getXint(){
+    public double getXInt(){
         return xInt;
     }
 
-    public double getYint(){
+    public double getYInt(){
         return yInt;
     }
 
@@ -45,14 +45,16 @@ public class MyLine {
 
     public void fixData(){
         slope = (p2.getY() - p1.getY()) / (p2.getX() - p1.getX());
+        xInt = ((0 - p1.getX())/ slope) + p1.getY();
+        yInt = ((0 - p1.getX())* slope) + p1.getY();
     }
 
     public String toString(){
         String output =  String.format("Points: [(%.3f,%.3f),(%.3f,%.3f)]", p1.getX(), p1.getY(), p2.getX(), p2.getY());
         output += String.format("\nSlope: %.3f", slope);
-        output += "\nX Intercept: " + getXint();
-        output += "\nY Intercept: " + getYint();
-        output += String.format("\ny = %.3fx + %.3f", getSlope(), getYint());
+        output += String.format("\nX Intercept: %.3f", getXInt());
+        output += String.format("\nY Intercept: %.3f", getYInt());
+        output += String.format("\nEquation: y = %.3fx + %.3f", getSlope(), getYInt());
 
         return output;
     }
