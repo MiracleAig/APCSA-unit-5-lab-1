@@ -31,6 +31,7 @@ public class MyLine {
 
     public double getYInt(){
         return yInt;
+
     }
 
     public void setPointOne(MyPoint p1){
@@ -55,6 +56,7 @@ public class MyLine {
         output += String.format("\nX Intercept: %.3f", getXInt());
         output += String.format("\nY Intercept: %.3f", getYInt());
         output += String.format("\nEquation: y = %.3fx + %.3f", getSlope(), getYInt());
+
 
         return output;
     }
